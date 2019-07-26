@@ -5,14 +5,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fir/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fir-cli'
+  spec.name          = 'fir-cli-x'
   spec.version       = FIR::VERSION
-  spec.authors       = ['NaixSpirit', 'atpking']
-  spec.email         = ['atpking@gmail.com']
+  spec.authors       = ['sparkrico','NaixSpirit', 'atpking']
+  spec.email         = ['sparkrico@gmail.com']
   spec.date          = Time.now.strftime('%Y-%m-%d')
   spec.summary       = 'fir.im command tool'
   spec.description   = 'fir.im command tool, support iOS and Android'
-  spec.homepage      = 'https://github.com/FIRHQ/fir-cli'
+  spec.homepage      = 'https://github.com/sparkrico/fir-cli'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
     /_/   /___/_/ |_|      \____/_____/___/
 
   ## 更新记录
+  - (1.7.2.1) 修复label nil 的问题，更新了ruby_android_apk库
   - (1.7.2) 修正了无论是否加参数都固定出现二维码图片的bug
   - (1.7.1) 增加了 钉钉推送 , 增加了返回指定版本下载地址
   - (1.7.0) 过期了ipa_build 功能, 增加了对 android manifest instant run 的兼容
@@ -44,7 +45,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'thor',           '~> 0.19'
   spec.add_dependency 'rest-client',    '~> 2.0'
-  spec.add_dependency 'ruby_android',   '~> 0.7.7'
+  spec.add_dependency 'ruby_android_apk',   '~> 0.7.7.1'
   spec.add_dependency 'rqrcode',        '~> 0.7'
   spec.add_dependency 'CFPropertyList'
   spec.add_dependency 'api_tools', '~> 0.1.0'
